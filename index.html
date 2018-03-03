@@ -1,12 +1,126 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Academy: Седона</title>
-  </head>
-  <body>
 
-    <p>Репозиторий создан для обучения на интенсивном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">Профессиональный HTML и CSS, уровень 1</a>».</p>
+<head>
+  <meta charset="utf-8">
+  <title>HTML Academy: Седона</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 
-  </body>
+<body>
+<header class="main-header">
+  <nav class="main-navigation">
+    <img src="img/index-logo.svg" width="138" height="70" alt="Логотип Седона">
+    <ul class="site-navigation">
+      <li><a href="#">Информация</a></li>
+      <li><a href="#">Фото и видео</a></li>
+      <li><a href="#">Карта Штата</a></li>
+      <li><a href="#">Гостиницы</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="index-banner">
+    <div class="banner-wrapper">
+      <img src="welcome-banner" width="1200" height="510" alt="Добро пожаловать в Седону">
+    </div>
+  </section>
+
+  <h1>Седона — небольшой городок в Аризоне, заслуживающий большего!</h1>
+  <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+
+  <section class="features">
+    <div class="feature-full">
+        <div class="feature">
+          <h2>Настоящий городок</h2>
+          <span>- №1 -</span>
+          <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
+        </div>
+        <div class="feature-image">
+          <img src="feature-1.jpg" alt="Настоящий городок">
+        </div>
+    </div>
+
+    <ul class="features-info">
+      <li class="feature-item">
+        <b>Жилье</b>
+        <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+      </li>
+      <li class="feature-item">
+        <b>Еда</b>
+        <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+      </li>
+      <li class="feature-item">
+        <b>Сувениры</b>
+        <p>Не только китайского, но и местного производства!</p>
+      </li>
+    </ul>
+
+    <div class="feature-full">
+        <div class="feature">
+          <h2>Там есть мост дьявола</h2>
+          <span>- №2 -</span>
+          <p>Да, по нему можно пройти если конечно вы осмелитесь</p>
+        </div>
+        <div class="feature-image">
+          <img src="feature-2.jpg" alt="Настоящий городок">
+        </div>
+    </div>
+
+    <ul class="features-nav">
+      <li class="feature">
+        <h2>Небольшая площадь</h2>
+        <span>- №3 -</span>
+        <p>Все достопримечательности находятся очень близко</p>
+      </li>
+      <li class="feature">
+        <h2>Красивая дорога</h2>
+        <span>- №4 -</span>
+        <p>Ехать в седону из Лас-Вегаса совсем не скучно!</p>
+      </li>
+      <li class="feature">
+        <h2>Мало туристов</h2>
+        <span>- №5 -</span>
+        <p>Большинство едет в Гранд каньон и толпится там</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="search-hotel">
+    <b>Заинтересовались</b>
+    <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+  </section>
+
+  <section class="interactive-map"></section>
+
+</main>
+
+<footer class="main-footer">
+  <a class="footer-visit" href="#">#VISITSEDONA</a>
+  <ul class="footer-social">
+    <li><a class="social-button" href="#">Twitter</a></li>
+    <li><a class="social-button" href="#">Facebook</a></li>
+    <li><a class="social-button" href="#">Youtube</a></li>
+  </ul>
+  <p class="footer-copyright">
+    <a class="copyright-image" href="https://htmlacademy.ru">
+      <b>Website by</b>
+      <img src="" width="115" height="41" alt="HTML Academy">
+    </a>
+  </p>
+</footer>
+
+<form class="search-hotel" action="https://echo.sedona.ru" method="post">
+  <fieldset>
+    <legend>Поиск гостиницы в Седоне</legend>
+    <label>Дата заезда<input type="date" name="arrival-date"></label>
+    <label>Дата выезда<input type="date" name="exit-date" value=""></label>
+    <span>Взрослые: 2</span>
+    <span>Дети: 0</span>
+    <button type="submit">Найти</button>
+  </fieldset>
+</form>
+
+</body>
 </html>
