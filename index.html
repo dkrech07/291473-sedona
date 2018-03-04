@@ -23,7 +23,7 @@
 <main class="container">
   <section class="index-banner">
     <div class="banner-wrapper">
-      <img src="welcome-banner" width="1200" height="510" alt="Добро пожаловать в Седону">
+      <img src="banner-welcome" width="1200" height="510" alt="Добро пожаловать в Седону">
     </div>
   </section>
 
@@ -32,7 +32,7 @@
 
   <section class="features">
     <div class="feature-full">
-        <div class="feature">
+        <div class="feature feature-active">
           <h2>Настоящий городок</h2>
           <span>- №1 -</span>
           <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
@@ -58,7 +58,7 @@
     </ul>
 
     <div class="feature-full">
-        <div class="feature">
+        <div class="feature feature-active">
           <h2>Там есть мост дьявола</h2>
           <span>- №2 -</span>
           <p>Да, по нему можно пройти если конечно вы осмелитесь</p>
@@ -106,20 +106,30 @@
   <p class="footer-copyright">
     <a class="copyright-image" href="https://htmlacademy.ru">
       <b>Website by</b>
-      <img src="" width="115" height="41" alt="HTML Academy">
+      <img src="img/html_academy.png" width="115" height="41" alt="HTML Academy">
     </a>
   </p>
 </footer>
 
 <form class="search-hotel" action="https://echo.sedona.ru" method="post">
-  <fieldset>
+  <fieldset class="search-title">
     <legend>Поиск гостиницы в Седоне</legend>
-    <label>Дата заезда<input type="date" name="arrival-date"></label>
-    <label>Дата выезда<input type="date" name="exit-date" value=""></label>
-    <span>Взрослые: 2</span>
-    <span>Дети: 0</span>
-    <button type="submit">Найти</button>
+    <label class="date-arrival">Дата заезда<input type="date" name="arrival-date"></label>
+    <label class="date-departure">Дата выезда<input type="date" name="exit-date" value=""></label>
+
+    <div class="adult-number">
+      <span>Взрослые:</span>
+      <button class="adult-min" type="submit">minus</button>
+      <button class="adult-max" type="submit">plus</button>
+    </div>
+
+    <div class="children-number">
+      <span>Дети:</span>
+      <button class="children-min" type="submit">minus</button>
+      <button class="children-max" type="submit">plus</button>
+    </div>
   </fieldset>
+  <button type="submit">Найти</button>
 </form>
 
 </body>

@@ -31,28 +31,32 @@
       </fieldset>
       <fieldset class="housing-type">
         <legend>Тип жилья:</legend>
-        <label><input type="checkbox" name="гостиница" checked>Гостиница</label>
+        <label><input type="checkbox" name="hotel" checked>Гостиница</label>
         <label><input type="checkbox" name="motel" checked>Мотель</label>
         <label><input type="checkbox" name="apartments" checked>Апартаменты</label>
       </fieldset>
       <fieldset class="cost">
         <legend>Стоимость в сутки(Р):</legend>
-        <span>От 0 до 3000</span>
-        <input type="range" min="0" max="300">
-        <button type="submit">Показать</button>
+        <div class="cost-range">
+          <span class="cost-from">От 0</span>
+          <span class="cost-up">До 3000</span>
+        </div>
+        <input type="text" name="min-cost">
+        <input type="text" name="max-cost">
       </fieldset>
+      <button type="submit">Показать</button>
     </form>
   </section>
 
   <section class="results">
     <div class="results-info">
       <p class="results-number">Найдено:<span>3</span></p>
-      <span class="sorting">Сортировка:</span>
-      <ul class="sorting-type">
-        <li class="by-price">По цене</li>
-        <li class="by-type">По типу</li>
-        <li class="by-rating">По рейтингу</li>
-      </ul>
+      <div class="sorting-type">
+        <span>Сортировка:</span>
+        <button class="by-price" type="submit">По цене</button>
+        <button class="by-type" type="submit">По типу</button>
+        <button class="by-rating" type="submit">По рейтингу</button>
+      </div>
       <div class="sorting-controls">
         <a class="sorting-top" href="#"></a>
         <a class="sorting-bottom sortin-active" href="#"></a>
@@ -65,39 +69,39 @@
     <li class="housing-item">
       <img src="img/amara_resort_spa.jpg" alt="Amara Resort & Spa">
       <div class="housing-info">
-        <p class="housing-name">Amara Resort & Spa</p>
+        <h2 class="housing-name">Amara Resort & Spa</h2>
         <p class="housing-price">Гостиница<span>От 4000 р.</span></p>
         <a href="#">Подробнее</a>
         <a href="#">Забронировать</a>
       </div>
       <div class="housing-rating">
-        <img class="stars" src="amara_resort_spa_stars.png" alt="stars">
+        <span class="stars stars-amara_resort"></span>
         <span class="rating">Рейтинг 8,5</span>
       </div>
     </li>
     <li class="housing-item">
       <img src="img/desert_auail_inn.jpg" alt="Desert Quail Inn">
       <div class="housing-info">
-        <p class="housing-name">Desert Quail Inn</p>
+        <h2 class="housing-name">Desert Quail Inn</h2>
         <p class="housing-price">Мотель<span>От 3000 р.</span></p>
         <a href="#">Подробнее</a>
         <a href="#">Забронировать</a>
       </div>
       <div class="housing-rating">
-        <img class="stars" src="img/desert_quail_inn_stars.png" alt="stars">
+        <span class="stars stars-desert_quail"></span>
         <span class="rating">Рейтинг 8,5</span>
       </div>
     </li>
     <li class="housing-item">
       <img src="img/villas_at_poco_diablo.png" alt="Villas at Poco Diablo">
       <div class="housing-info">
-        <p class="housing-name">Villas at Poco Diablo</p>
+        <h2 class="housing-name">Villas at Poco Diablo</h2>
         <p class="housing-price">Апартаменты<span>От 2000 р.</span></p>
         <a href="#">Подробнее</a>
         <a href="#">Забронировать</a>
       </div>
       <div class="housing-rating">
-        <img class="img/villas_at_poco_diablo_stars.png" href="#" alt="stars">
+        <span class="stars stars-villas_at"></span>
         <span class="rating">Рейтинг 9,2</span>
       </div>
     </li>
@@ -115,7 +119,7 @@
   <p class="footer-copyright">
     <a class="copyright-image" href="https://htmlacademy.ru">
       <b>Website by</b>
-      <img src="" width="115" height="41" alt="HTML Academy">
+      <img src="img/html_academy.png" width="115" height="41" alt="HTML Academy">
     </a>
   </p>
 </footer>
