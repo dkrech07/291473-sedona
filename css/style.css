@@ -1,0 +1,88 @@
+.main-section {
+  position: relative;
+
+  display: block;
+  max-width: 1200px;
+  width: 100%;
+  min-width: 768px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+}
+
+.index-banner .banner-wrapper {
+  background: #3d5b6e url("../img/index-background.jpg") no-repeat center;
+  width: 1200px;
+  height: 508px;
+}
+
+.filters {
+  background: #3d5b6e url("../img/catalog-background.jpg") no-repeat center;
+  width: 1200px;
+  height: 217px;
+}
+
+/*Три преимущества на главной странице*/
+
+.feature-item.feature-housing::before {
+  display: inline-block;
+  content: "";
+  background: url("../img/icon-1.svg")no-repeat center;
+  width: 77px;
+  height: 75px;
+}
+
+.feature-item.feature-food::before {
+  display: inline-block;
+  content: "";
+  background: url("../img/icon-2.svg")no-repeat center;
+  width: 64px;
+  height: 75px;
+}
+
+.feature-item.feature-souvenirs::before {
+  display: inline-block;
+  content: "";
+  background: url("../img/icon-3.svg")no-repeat center;
+  width: 75px;
+  height: 71px;
+}
+
+/*footer cоциальные сети*/
+
+.footer-social {
+  font-size: 0;
+  vertical-align: top;
+}
+
+.footer-social li {
+  list-style: none;
+  display: inline-block;
+  padding-right: 6px;
+}
+
+.footer-social li:last-child {
+  padding: 0;
+}
+
+.social-button {
+  display: inline-block;
+  width: 46px;
+  height: 48px;
+  background: #81b3d2;
+  font-size: 0;
+}
+
+.social-tw {
+  background: #81b3d2 url("../img/twitter.svg") no-repeat center;
+}
+
+.social-fb {
+  background: #81b3d2 url("../img/fb-icon.svg") no-repeat center;
+}
+
+.social-youtube {
+  background: #81b3d2 url("../img/youtube.svg") no-repeat center;
+}
