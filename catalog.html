@@ -10,8 +10,11 @@
 </head>
 
 <body>
+  <div class="page-wrapper">
   <header class="main-section main-header">
-    <img class="index-logo" src="img/index-logo.png" width="138" height="70" alt="Логотип Седона">
+    <a href="index.html">
+      <img class="index-logo" src="img/index-logo.png" width="138" height="70" alt="Логотип Седона">
+    </a>
     <nav class="main-navigation">
       <ul class="site-navigation">
         <li><a href="#">Информация</a></li>
@@ -28,46 +31,48 @@
       <form class="filters-form" action="https://echo.sedona.ru" method="post">
         <fieldset class="infrastructure">
           <legend>Инфраструктура:</legend>
-          <input type="checkbox" id="pool" name="pool" checked><label for="pool">Бассейн</label>
-          <input type="checkbox" id="parking" name="parking"><label for="parking">Парковка</label>
-          <input type="checkbox" id="wi-fi" name="wi-fi"><label for="wi-fi">Wi-Fi</label>
+          <input class="visually-hidden" type="checkbox" id="pool" name="pool" checked><label for="pool">Бассейн</label>
+          <input class="visually-hidden" type="checkbox" id="parking" name="parking"><label for="parking">Парковка</label>
+          <input class="visually-hidden" type="checkbox" id="wi-fi" name="wi-fi"><label for="wi-fi">Wi-Fi</label>
         </fieldset>
         <fieldset class="housing-type">
           <legend>Тип жилья:</legend>
-          <input type="checkbox" name="hotel" id="hotel" checked>
+          <input class="visually-hidden" type="checkbox" name="hotel" id="hotel" checked>
           <label for="hotel">Гостиница</label>
-          <input type="checkbox" name="motel" id="motel" checked>
+          <input class="visually-hidden" type="checkbox" name="motel" id="motel" checked>
           <label for="motel">Мотель</label>
-          <input type="checkbox" name="apartments" id="apartments" checked>
+          <input class="visually-hidden" type="checkbox" name="apartments" id="apartments" checked>
           <label for="apartments">Апартаменты</label>
         </fieldset>
-        <fieldset class="cost">
-          <legend>Стоимость в сутки(Р):</legend>
-          <div class="cost-range">
-            <span class="cost-from">От 0</span>
-            <span class="cost-up">До 3000</span>
-          </div>
-          <input type="text" name="min-cost">
-          <input type="text" name="max-cost">
-        </fieldset>
-        <button type="submit">Показать</button>
+        <div class="cost">
+          <fieldset class="cost-day">
+            <legend>Стоимость в сутки(Р):</legend>
+            <div class="cost-range">
+              <span class="cost-from">От 0</span>
+              <span class="cost-up">До 3000</span>
+            </div>
+            <input type="text" name="min-cost">
+            <input type="text" name="max-cost">
+          </fieldset>
+            <button type="submit">Показать</button>
+        </div>
       </form>
     </section>
 
     <section class="results">
-      <div class="results-info">
+
         <p class="results-number">Найдено:<span>3</span></p>
         <div class="sorting-type">
           <span>Сортировка:</span>
-          <a class="by-price" href="#">По цене</a>
+          <a class="by-price selected-sort" href="#">По цене</a>
           <a class="by-type" href="#">По типу</a>
           <a class="by-rating" href="#">По рейтингу</a>
         </div>
         <div class="sorting-controls">
-          <a class="sorting-top" href="#"></a>
-          <a class="sorting-bottom sortin-active" href="#"></a>
+          <a class="sorting-top" href="#">Дороже</a>
+          <a class="sorting-bottom sortin-active" href="#">Дешевле</a>
         </div>
-      </div>
+
     </section>
 
   <section class="housing-options">
@@ -76,9 +81,14 @@
         <img src="img/amara-resort-spa.jpg" width="135" height="90" alt="Amara Resort & Spa">
         <div class="housing-info">
           <h2 class="housing-name">Amara Resort & Spa</h2>
-          <p class="housing-price">Гостиница<span>От 4000 р.</span></p>
-          <a class="button more-info" href="#">Подробнее</a>
-          <a class="button order" href="#">Забронировать</a>
+          <div class="housing-price">
+            <span class="price-name">Гостиница</span>
+            <span class="price-number">От 4000 р.</span>
+          </div>
+          <div class="button-controls">
+            <a class="button more-info" href="#">Подробнее</a>
+            <a class="button order" href="#">Забронировать</a>
+          </div>
         </div>
         <div class="housing-rating">
           <span class="stars stars-amara-resort"></span>
@@ -89,9 +99,14 @@
         <img src="img/desert-auail-inn.jpg" width="135" height="90" alt="Desert Quail Inn">
         <div class="housing-info">
           <h2 class="housing-name">Desert Quail Inn</h2>
-          <p class="housing-price">Мотель<span>От 3000 р.</span></p>
-          <a class="button more-info" href="#">Подробнее</a>
-          <a class="button order" href="#">Забронировать</a>
+          <div class="housing-price">
+            <span class="price-name">Мотель</span>
+            <span class="price-number">От 3000 р.</span>
+          </div>
+          <div class="button-controls">
+            <a class="button more-info" href="#">Подробнее</a>
+            <a class="button order" href="#">Забронировать</a>
+          </div>
         </div>
         <div class="housing-rating">
           <span class="stars stars-desert-quail"></span>
@@ -102,9 +117,14 @@
         <img src="img/villas-at-poco-diablo.jpg" width="135" height="90" alt="Villas at Poco Diablo">
         <div class="housing-info">
           <h2 class="housing-name">Villas at Poco Diablo</h2>
-          <p class="housing-price">Апартаменты<span>От 2000 р.</span></p>
-          <a class="button more-info" href="#">Подробнее</a>
-          <a class="button order" href="#">Забронировать</a>
+          <div class="housing-price">
+            <span class="price-name">Апартаменты</span>
+            <span class="price-number">От 2000 р.</span>
+          </div>
+          <div class="button-controls">
+            <a class="button more-info" href="#">Подробнее</a>
+            <a class="button order" href="#">Забронировать</a>
+          </div>
         </div>
         <div class="housing-rating">
           <span class="stars stars-villas_at"></span>
@@ -130,5 +150,6 @@
     </p>
   </footer>
 
+  </div>
 </body>
 </html>

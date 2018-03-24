@@ -23,6 +23,13 @@
   margin: -1px;
 }
 
+.page-wrapper {
+  max-width: 1200px;
+  min-width: 768px;
+  margin: 0 auto;
+  box-shadow: 0 0 15px #dedede;
+}
+
 /*Шапка*/
 
 .main-header {
@@ -192,35 +199,26 @@
 }
 
 .feature span {
-  display: block;
-  margin: 22px 0;
-  padding: 0;
-  font-family: "PT Sans", "Arial", sans-serif;
-  font-size: 14px;
-  line-height: 21px;
-  font-weight: normal;
-  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
 }
 
 .feature span::before,
 .feature span::after {
   content: "";
-  display: inline-block;
-  vertical-align: middle;
   width: 10px;
   height: 1px;
   background-color: #333333;
-  position: relative;
+  margin: 0 5px;
 }
 
-.feature span::before {
-  margin-left: -100%;
-  left: -4px;
+.feature-active span::before,
+.feature-active span::after {
+    background-color: #ffffff;
 }
-.feature span::after {
-  margin-right: -100%;
-  right: -4px;
-}
+
 
 .feature p {
   margin-bottom: 58px;
@@ -477,35 +475,212 @@
 
 /*Страница отелей*/
 
-.inner-content .housing-options {
-  margin-left: 6%;
-  margin-right: 6%;
+.site-navigation .active {
+  text-decoration: none;
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 26px;
+  color: #766357;
+  text-transform: uppercase;
 }
 
-.housing-list {
+/*Фильтры*/
+
+.filters {
+  background: url("../img/catalog-background.jpg") no-repeat;
+  background-position: center;
+}
+
+.filters .filters-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 6%;
+  margin-right: 6%;
+  padding-top: 28px;
+  padding-bottom: 32px;
+}
+
+.filters-form .infrastructure,
+.filters-form .housing-type,
+.filters-form .cost {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.filters-form fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.filters-form .infrastructure {
+  margin-right: 118px;
+}
+
+.filters-form .cost {
+  margin-left: auto;
+}
+
+.infrastructure legend,
+.housing-type legend,
+.cost-day legend {
+  margin: 0;
+  margin-bottom: 24px;
+  padding: 0;
+  font-family: "PT Sans", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.infrastructure label,
+.housing-type label {
+  display: block;
+  margin: 0;
+  margin-bottom: 26px;
+  padding: 0;
+  padding-left: 40px;
+  position: relative;
+  font-family: "PT Sans", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.infrastructure label:last-child,
+.housing-type label:last-child {
+  margin-bottom: 0;
+}
+
+.infrastructure label::before,
+.housing-type label::before {
+  content: "";
+  background: url("../img/checkbox-off.svg") no-repeat center;
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.infrastructure input[type="checkbox"]:checked + label::before,
+.housing-type input[type="checkbox"]:checked + label::before {
+  content: "";
+  background: url("../img/checkbox-on.svg") no-repeat center;
+  width: 27px;
+  height: 23px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/*Фильтр сортировки*/
+.results {
+  display: flex;
+  align-items: center;
+  margin-left: 6%;
+  margin-right: 6%;
+  padding: 30px 0;
+}
+
+.results .results-number {
+  margin: 0;
+  padding: 0;
+  margin-right: 50px;
+  font-family: "PT Sans", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.results-number span {
+  margin-left: 5px;
+}
+
+.results .sorting-type {
+  display: flex;
+}
+
+.sorting-type span {
+  margin-right: 40px;
+  font-family: "PT Sans", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: normal;
+  color: #000000;
+}
+
+.sorting-type a {
+  margin-right: 30px;
+  font-family: "PT Sans", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  border-bottom: 1px dotted #81b3d2;
+}
+
+.sorting-type .selected-sort {
+  border: none;
+  color: #81b3d2;
+}
+
+.sorting-controls {
+  margin-left: auto;
+}
+
+.sorting-controls .sorting-top,
+.sorting-controls .sorting-bottom {
+  font-size: 0;
+  display: inline-block;
+  width: 11px;
+  height: 10px;
+  background: url("../img/icon-up-dir.svg") no-repeat center;
+}
+
+.sorting-controls .sorting-bottom {
+  background: url("../img/icon-down-dir.svg") no-repeat center;
+  margin-left: 3px;
+}
+
+/* Список отелей*/
+
+.housing-options .housing-list {
   margin: 0;
   padding: 0;
 }
 
 .housing-list .housing-item {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
+  padding: 30px 6%;
+  border-top: 1px solid #e5e5e5;
+}
 
+.housing-item .housing-rating {
+  margin-left: auto;
+}
+
+.housing-list .housing-item:last-child {
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .housing-item img {
   width: 136px;
   height: 90px;
   margin-right: 30px;
-}
-
-.housing-item .housing-info {
-  font-size: 0;
-}
-
-.housing-item .housing-rating {
-  margin-left: auto;
 }
 
 .housing-info .housing-name {
@@ -516,7 +691,8 @@
   font-weight: bold;
   color: #000000;
   margin: 0;
-  margin-bottom: 4px;
+  margin-top: -5px;
+  margin-bottom: 6px;
   padding: 0;
 }
 
@@ -528,11 +704,16 @@
   font-weight: normal;
   color: #333333;
   margin: 0;
-  margin-bottom: 6px;
+  margin-bottom: 15px;
   padding: 0;
 }
 
-.button {
+.housing-info .button-controls {
+  display: flex;
+  font-size: 0;
+}
+
+.button-controls .button {
   display: inline-block;
   font-family: "PT Sans", "Arial", sans-serif;
   text-transform: uppercase;
@@ -543,128 +724,56 @@
   color: #ffffff;
   background-color: #81b3d2;
   margin: 0;
-  padding: 6px 17px;
+  padding: 3px 17px;
   min-width: 110px;
   text-align: center;
   box-sizing: border-box;
 }
 
-.button.more-info {
+.button-controls .button.more-info {
   background-color: #81b3d2;
-  width: 110px;
   margin-right: 6px;
 }
 
-.button.order {
+.button-controls .button.order {
   background-color: #766357;
-  width: 149px;
 }
 
-
-
-
-
-.filters {
-
-  min-height: 218px;
-  background: url("../img/catalog-background.jpg") no-repeat;
-  padding-left: 6%;
-  padding-right: 6%;
-}
-
-.filters-form {
-  display: flex;
-  justify-content: space-between;
-}
-
-.filters .infrastructure,
-.filters .housing-type {
-  border: 0;
-  outline: 0;
-  color: #ffffff;
-  width: 33%;
-  margin: 0;
-  margin-top: 27px;
-  padding: 0;
-}
-
-.infrastructure legend,
-.housing-type legend {
-  margin: 0;
-  padding: 0;
-  padding-bottom: 24px;
-  font-family: "PT Sans", "Arial", sans-serif;
-  text-transform: uppercase;
-  font-size: 16px;
-  line-height: 21px;
-  font-weight: bold;
-}
-
-.infrastructure input,
-.housing-type input  {
-  display: none;
-}
-
-.infrastructure label,
-.housing-type label {
+.housing-rating .stars {
   display: block;
-  margin: 0;
-  padding: 0;
-  padding-top: 3px;
-  margin-bottom: 22px;
-  padding-left: 40px;
-  cursor: pointer;
-  position: relative;
+  width: 110px;
+  height: 27px;
+  background: url("../img/star.svg");
+  background-position: 0 50%;
+  background-repeat: space;
+  margin-top: -5px;
+  margin-bottom: 45px;
+  margin-left: auto;
+}
+
+
+.housing-rating .stars-amara-resort {
+  width: 72px;
+}
+
+.housing-rating .stars-desert-quail {
+  width: 54px;
+}
+
+.housing-rating .stars-villas_at {
+  width: 37px;
+}
+
+.housing-rating .rating {
+  background-color: #f2f2f2;
   font-family: "PT Sans", "Arial", sans-serif;
   text-transform: uppercase;
+  text-decoration: none;
   font-size: 14px;
   line-height: 21px;
   font-weight: normal;
-  width: 50%;
-}
-
-.infrastructure label::before,
-.housing-type label::before {
-  content: "";
-  display: inline-block;
-  background: url("../img/checkbox-off.svg") no-repeat center;
-  width: 23px;
-  height: 23px;
-  position: absolute;
-  left: 0;
-  top: -1px;
-}
-
-.infrastructure input:checked + label::before,
-.housing-type input:checked + label::before {
-  content: "";
-  display: inline-block;
-  background: url("../img/checkbox-on.svg") no-repeat center;
-  width: 27px;
-  height: 23px;
-  position: absolute;
-  left: 0;
-  top: -1px;
-}
-
-.results {
-  padding-left: 6%;
-  padding-right: 6%;
-}
-
-.results-info {
-  display: flex;
-  justify-content: space-between;
-}
-
-.results-info .results-number,
-.results-info span {
-  margin: 0;
-  padding: 0;
-  font-family: "PT Sans", "Arial", sans-serif;
-  line-height: 26px;
-  font-size: 21px;
-  font-weight: bold;
-  color: #000000;
-  text-transform: uppercase;
+  color: #666666;
+  padding: 4px 16px;
+  min-width: 110px;
+  box-sizing: border-box;
 }
