@@ -27,6 +27,7 @@
   min-width: 768px;
   margin: 0 auto;
   box-shadow: 0 0 25px #dedede;
+  position: relative;
 }
 
 /*Шапка*/
@@ -376,16 +377,24 @@
 .interactive-map iframe {
   margin: 0;
   padding: 0;
-  display: block;
+  width: 100%;
+  height: 593px;
+  bottom: 0;
 }
 
 /*Подвал*/
+
+.footer-map {
+  position: absolute;
+  bottom: 0;
+  opacity: 0.9;
+}
 
 .main-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 36px;
+  padding-top: 36px;
   padding-bottom: 36px;
   background-color: #ffffff;
 }
@@ -448,16 +457,23 @@
 .footer-copyright {
   margin: 0;
   padding: 0;
+  font-size: 0;
 }
 
-.copyright-image b, .copyright-image img {
-  display: inline-block;
+.copyright-image:hover path, .copyright-image:focus path {
+  fill: #81b3d2;
+}
+
+.copyright-image:active path {
+  fill: #bfbdbe;
+}
+
+.copyright-image b, .copyright-image svg {
   vertical-align: middle;
 }
 
 .copyright-image {
   text-decoration: none;
-  font-size: 0;
 }
 
 .copyright-image b {
@@ -665,12 +681,16 @@
   background: #ababab;
   border: 8px solid #ffffff;
   border-radius: 50%;
-  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  box-shadow: 0 2px 1px #9ca09f;
   cursor: pointer;
 }
 
 .range-toggle:hover {
-  background: #1c4f80;
+  top: -11px;
+  width: 5px;
+  height: 5px;
+  border: 9px solid #ffffff;
+  box-shadow: 0 3px 1px #9ca09f;
 }
 
 .range-toggle-min {
@@ -974,6 +994,7 @@
   font-weight: bold;
   background-color: #ffffff;
   padding: 55px;
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.3);
 }
 
 .search-hotel-form .search-title {
