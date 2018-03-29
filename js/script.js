@@ -1,13 +1,63 @@
-var button = document.querySelector(".open-form");
+var link = document.querySelector(".search-button");
 var form = document.querySelector(".search-hotel-form");
+var arrivalDate = form.querySelector("[name=arrival-date]");
+var departureDate = form.querySelector("[name=departure-date]");
+var adults = form.querySelector("[name=number-adult]");
+var childrens = form.querySelector("[name=number-children]");
 
-button.addEventListener("click", function(event) {
-  event.preventDefault();
-  if (!form.classList.contains("open")) {
-    form.classList.add("open");
-    form.classList.remove("hide");
+var isStorageSupport = true;
+var storageAdults = "";
+var storageChildrens = "";
+
+try {
+  storageAdults = localStorage.getItem("adults");
+  storageChildrens = localStorage.getItem("childrens");
+} catch (err) {
+  isStorageSupport = false;
+}
+
+form.classList.toggle("search-form-hide");
+
+link.addEventListener("click", function (evt) {
+  evt.preventDefault();
+  form.classList.toggle("search-form-hide");
+  if (form.classList.contains("search-form-error")) {
+    form.classList.remove("search-form-error");
+  }
+
+if (storageAdults ) {
+  adults.value = storageAdults;
+}
+if (storageChildrens ) {
+  childrens.value = storageChildrens;
+}
+arrivalDate.focus();
+});
+
+form.addEventListener("submit", function (evt) {
+  if (!arrivalDate.value || !departureDate.value || !adults.value || !childrens.value) {
+    evt.preventDefault();
+    if (form.classList.contains("search-form-error")) {
+      form.classList.remove("search-form-error");
+    }
+    form.offsetWidth = form.offsetWidth;
+    form.classList.add("search-form-error");
   } else {
-    form.classList.add("hide");
-    form.classList.remove("open");
+    if (isStorageSupport) {
+      localStorage.setItem("adults", adults.value);
+      localStorage.setItem("childrens", childrens.value);
+    }
+  }
+});
+
+window.addEventListener("keydown", function (evt) {
+  if (evt.keyCode === 27) {
+    evt.preventDefault();
+    if (!form.classList.contains("search-form-hide")) {
+      form.classList.add("search-form-hide");
+      if (form.classList.contains("search-form-error")) {
+        form.classList.remove("search-form-error");
+      }
+    }
   }
 });
