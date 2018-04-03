@@ -115,29 +115,33 @@
 
 .index-banner {
   position: relative;
-  margin-bottom: 60px;
-}
-
-.index-banner .banner-wrapper {
   width: 100%;
-  height: 508px;
-  background: #3f5f73 url('../img/index-background.jpg') no-repeat;
-  background-position: 50% 21%;
+  min-height: 508px;
+  margin-bottom: 60px;
+  background-color: #3f5f73;
 }
 
 .index-banner img {
-  display: block;
-  width: 458px;
-  height: 352px;
-  margin: 0 auto;
-  padding-top: 76px;
+  width: 100%;
+  height: 508px;
+  vertical-align: bottom;
 }
 
-.banner-mask {
+.index-banner .banner-welcome {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  width: 458px;
+  height: 352px;
+  margin-left: -229px;
+}
+
+.index-banner::before {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 57px;
+  content: '';
   background: url('../img/mask-max.png');
   background-repeat: no-repeat;
   background-position: center;
@@ -233,10 +237,6 @@
   margin: 0 6px;
   content: '';
   background-color: #979797;
-}
-
-.feature-active span::before, .feature-active span::after {
-  background-color: #fff;
 }
 
 .feature p {
@@ -487,6 +487,7 @@
   display: inline-block;
   margin-right: 6px;
   list-style-type: none;
+  vertical-align: top;
 }
 
 .footer-social li:last-child {
@@ -570,7 +571,7 @@
 /*Фильтры*/
 
 .filters {
-  background: url('../img/catalog-background.jpg') no-repeat;
+  background: #3f5f73 url('../img/catalog-background.jpg') no-repeat;
   background-position: 50% 15%;
 }
 
@@ -815,7 +816,7 @@
   margin-right: 6%;
   margin-left: 6%;
   padding-top: 26px;
-  padding-bottom: 26px;
+  padding-bottom: 29px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -848,6 +849,7 @@
   font-weight: normal;
   line-height: 18px;
   display: inline-block;
+  vertical-align: middle;
   text-transform: uppercase;
 }
 
@@ -889,10 +891,12 @@
   display: inline-block;
   width: 11px;
   height: 10px;
+  vertical-align: middle;
 }
 
 .sorting-controls .sorting-top {
   margin-right: 10px;
+  margin-top: 2px;
 }
 
 .sorting-controls path {
@@ -1052,7 +1056,7 @@
 .stars-info {
   font-size: 0;
   width: 110px;
-  margin-bottom: 38px;
+  margin-bottom: 45px;
   text-align: right;
 }
 
@@ -1063,6 +1067,7 @@
   margin: 0;
   padding: 0;
   padding-right: 5px;
+  vertical-align: top;
   background: url('../img/star.svg');
   background-repeat: no-repeat;
   background-position: 0 50%;
@@ -1178,7 +1183,7 @@
   fill: rgba(0, 0, 0, .3);
 }
 
-.calendar:hover path {
+.calendar:hover path, .calendar:focus path {
   fill: rgba(0, 0, 0, 1);
 }
 
@@ -1324,15 +1329,15 @@
   background-color: #a9a9a9;
 }
 
-.min-btn:hover::before {
+.min-btn:hover::before, .min-btn:focus::before {
   background-color: #000;
 }
 
-.max-btn:hover::before {
+.max-btn:hover::before, .max-btn:focus::before {
   background-color: #000;
 }
 
-.max-btn:hover::after {
+.max-btn:hover::after, .max-btn:focus::after {
   background-color: #000;
 }
 
